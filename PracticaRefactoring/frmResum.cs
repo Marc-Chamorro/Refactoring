@@ -17,10 +17,26 @@ namespace PracticaRefactoring
             InitializeComponent();
         }
 
-        public string[] dades = new string[7];
-        public List<Detall> detall;
-        public string zona;
+        private string zona;
+        public string Zona
+        {
+            get { return zona; }
+            set { zona = value; }
+        }
 
+        private List<Detall> detall;
+        public List<Detall> Detall
+        {
+            get { return detall; }
+            set { detall = value; }
+        }
+
+        private DadesComanda dades;
+        public DadesComanda Dades
+        {
+            get { return dades; }
+            set { dades = value; }
+        }
 
         private void frmResum_Load(object sender, EventArgs e)
         {
@@ -29,19 +45,17 @@ namespace PracticaRefactoring
                 lblObservacions.Text = "Observacions: Pendent de confiormació des de la central";
             }
 
-            lblBrut.Text = dades[2];
-            lblIva.Text = dades[3];
-            lblDespesa.Text = dades[4];
-            lbldescompte.Text = dades[5];
+            lblBrut.Text = dades.ImportBrut;
+            lblIva.Text = dades.IVA;
+            lblDespesa.Text = dades.Despesa;
+            lbldescompte.Text = dades.Descompte;
 
-            lblComanda.Text = dades[0];
-            lblClient.Text = dades[1];
-            lblestat.Text = dades[6];
-            double total = 0.0;
+            lblComanda.Text = dades.ComandaNum;
+            lblClient.Text = dades.Client;
+            lblestat.Text = dades.Estat;
 
-            total = double.Parse(lblBrut.Text) + double.Parse(lblIva.Text)
-                    + double.Parse(lblDespesa.Text) - double.Parse(lbldescompte.Text);
-            lblTotal.Text = total.ToString();
+            Comanda cmd = new Comanda();
+            lblTotal.Text = cmd.CalcularTotal(double.Parse(dades.ImportBrut), double.Parse(dades.IVA), double.Parse(dades.Despesa), double.Parse(dades.Descompte)).ToString();
 
             dtgProductes.DataSource = detall;
         }

@@ -21,8 +21,8 @@ namespace PracticaRefactoring
         {
             frmComanda frm = new frmComanda();
             frm.Show();
-            frm.zona = cmbZona.Text;
-            frm.representant = txtNom.Text;
+            frm.Zona = cmbZona.Text;
+            frm.Representant = txtNom.Text;
         }
     }
 }

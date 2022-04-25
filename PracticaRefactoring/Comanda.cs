@@ -170,5 +170,20 @@ namespace PracticaRefactoring
             return import * dto;
         }
 
+        public double FerCalculIRound(List<Detall> llista, string tipusCalcul, string client) 
+        {
+            double resultat = 0.0;
+            resultat = Fercalculs(llista, tipusCalcul, client);
+            resultat = Math.Round(resultat, 2, MidpointRounding.AwayFromZero);
+
+            return resultat;
+        }
+
+        public double CalcularTotal(double ImportBrut, double IVA, double Despesa, double Descompte)
+        {
+            double total = 0.0;
+            total = ImportBrut + IVA + Despesa - Descompte;
+            return total;
+        }
     }
 }

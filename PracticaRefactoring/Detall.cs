@@ -12,4 +12,14 @@ namespace PracticaRefactoring
         public int quantitat { get; set; }
         public double preu { get; set; }
     }
+    public class DadesComanda
+    {
+        public string ComandaNum { get; set; }
+        public string Client { get; set; }
+        public string ImportBrut { get; set; }
+        public string IVA { get; set; }
+        public string Despesa { get; set; }
+        public string Descompte { get; set; }
+        public string Estat { get; set; }
+    }
 }
