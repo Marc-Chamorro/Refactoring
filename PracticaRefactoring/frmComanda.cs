@@ -21,12 +21,16 @@ namespace PracticaRefactoring
             set { zona = value; }
         }
 
-        List<Detall> Cistella = new List<Detall>();
-        Comanda comanda = new Comanda();
-        string numComanda;
-        DadesComanda DadesComanda = new DadesComanda();
-        int contador = 0;
-        bool novaComanda = false;
+        private Comanda comanda = new Comanda();
+        private DadesComanda DadesComanda = new DadesComanda();
+
+       
+
+        private List<Detall> Cistella = new List<Detall>();
+
+        private string numComanda;
+        private int contador = 0;
+        private bool novaComanda = false;
 
 
         public frmComanda()
@@ -89,7 +93,7 @@ namespace PracticaRefactoring
         private void btnComanda_Click(object sender, EventArgs e)
         {
             novaComanda = true;
-            contador = contador  + 1;
+            contador++;
             DadesComanda = new DadesComanda();
 
             int dia = DateTime.Today.DayOfYear;

@@ -55,7 +55,12 @@ namespace PracticaRefactoring
             lblestat.Text = dades.Estat;
 
             Comanda cmd = new Comanda();
-            lblTotal.Text = cmd.CalcularTotal(double.Parse(dades.ImportBrut), double.Parse(dades.IVA), double.Parse(dades.Despesa), double.Parse(dades.Descompte)).ToString();
+            lblTotal.Text = cmd.CalcularPreuTotal(
+                double.Parse(dades.ImportBrut),
+                double.Parse(dades.IVA), 
+                double.Parse(dades.Despesa),
+                double.Parse(dades.Descompte)
+            ).ToString();
 
             dtgProductes.DataSource = detall;
         }

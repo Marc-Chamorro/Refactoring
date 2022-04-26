@@ -179,7 +179,7 @@ namespace PracticaRefactoring
             return resultat;
         }
 
-        public double CalcularTotal(double ImportBrut, double IVA, double Despesa, double Descompte)
+        public double CalcularPreuTotal(double ImportBrut, double IVA, double Despesa, double Descompte)
         {
             double total = 0.0;
             total = ImportBrut + IVA + Despesa - Descompte;
