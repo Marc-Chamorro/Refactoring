@@ -179,10 +179,10 @@ namespace PracticaRefactoring
             return resultat;
         }
 
-        public double CalcularPreuTotal(double ImportBrut, double IVA, double Despesa, double Descompte)
+        public double CalcularPreuTotal(DadesComanda dades)
         {
             double total = 0.0;
-            total = ImportBrut + IVA + Despesa - Descompte;
+            total = double.Parse(dades.ImportBrut) + double.Parse(dades.IVA) + double.Parse(dades.Despesa) - double.Parse(dades.Descompte);
             return total;
         }
     }
